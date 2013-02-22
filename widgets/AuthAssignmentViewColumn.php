@@ -30,7 +30,7 @@ class AuthAssignmentViewColumn extends AuthAssignmentColumn
 	 */
 	protected function renderDataCellContent($row, $data)
 	{
-		if (!Yii::app()->user->isAdmin)
+		if (empty(Yii::app()->user->isAdmin))
 		{
 			$this->grid->controller->widget('bootstrap.widgets.TbButton', array(
 				'type' => 'link',
