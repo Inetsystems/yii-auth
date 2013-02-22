@@ -26,6 +26,12 @@ abstract class AuthController extends CController
 	 */
 	public $breadcrumbs = array();
 
+    public function filters() {
+        return array(
+            array('auth.filters.AuthFilter'),
+        );
+    }
+
 	/**
 	 * Returns the authorization item type as a string.
 	 * @param string $type the item type (0=operation, 1=task, 2=role).
